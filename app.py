@@ -11,17 +11,13 @@ from flask import Flask
 app = Flask(__name__)
 
 # @app.route：是一个装饰器
-# @app.route('/app')就是讲 url 中的 / 映射到 hello_world 这个视图函数上面
+# @app.route('/')就是讲 url 中的 / 映射到 hello_world 这个视图函数上面
 # 以后访问这个网站的 / 目录的时候，会执行 hello_world 这个函数，然后将这个函数的返回值，返回给浏览器。
 # http://127.0.0.1:5000/ ---> hello_world 函数
 @app.route('/')
 def hello_world():
     return 'Hello World!'
 
-# http://127.0.0.1:5000/app ---> hello_app 函数
-@app.route('/app')
-def hello_app():
-    return 'Hello app!'
 
 # 如果这个文件是作为一个主文件运行，那么就执行 app.run() 方法
 # 也就是启动这个网站
